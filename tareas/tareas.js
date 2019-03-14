@@ -48,9 +48,17 @@ const crear = (descripcion) =>{
     return porHacer;
 }
 
-const getListado = () => {
+const getListado = (completado) => {
     cargar();
-    return listado;
+    if(completado == null){
+        return listado;
+    }
+    else{
+        let filtro = listado.filter( tarea => {
+            return tarea.completado == completado;
+        })
+        return filtro;
+    }
 }
 
 const actualizar = (descripcion, completado=true) => {
@@ -104,20 +112,10 @@ const eliminar = (descripcion) => {
     } */
 }
 
-const filtrar = (completado) => {
-    cargar();
-
-    let filtro = listado.filter( tarea => {
-        return tarea.completado == completado;
-    })
-
-    return filtro;
-}
 
 module.exports = {
     crear,
     getListado,
     actualizar,
-    eliminar,
-    filtrar
+    eliminar
 }

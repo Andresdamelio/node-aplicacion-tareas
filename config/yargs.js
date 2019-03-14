@@ -7,7 +7,6 @@ const descripcion = {
 
 const completado = {
     alias: 'c',
-    default: false,
     type: 'boolean',
     desc: 'Marca como completado o pendiente la tarea'
 };
@@ -23,7 +22,7 @@ const argv = require('yargs')
 .command('borrar', 'Esta opción es usada para eliminar una tarea por hacer', {
     descripcion
 })
-.command('filtrar', 'Esta opcion permite filtrar las tareas completadas o no', {
+.command('listar', 'Esta opcion permite filtrar las tareas completadas o no', {
     completado
 })
 .help()

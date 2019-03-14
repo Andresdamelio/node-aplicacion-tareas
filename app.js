@@ -15,10 +15,15 @@ switch( comando ) {
     break;
 
     case 'listar':
-        let tareas = tarea.getListado();
+        let tareas = tarea.getListado( argv.completado );
         
         for(let t of tareas){
-            console.log('======= Tareas por hacer ======='.green);
+            if(!t.completado){
+                console.log('======= Tarea por hacer ======='.blue);
+            }
+            else{
+                console.log('======= Tarea realizada ======='.red);
+            }
             console.log(t.descripcion);
             console.log('Estado: ',t.completado);
             console.log('================================'.green);
@@ -33,21 +38,6 @@ switch( comando ) {
     case 'borrar':
         let borrado = tarea.eliminar(argv.descripcion);
         console.log(borrado);
-    break;
-
-    case 'filtrar':
-    let filtro = tarea.filtrar( argv.completado );
-    for(let f of filtro){
-        if(argv.completado){
-            console.log('======= Tareas realizadas ======='.green);
-        }
-        else{
-            console.log('======= Tareas por hacer ======='.green);
-        }
-        
-        console.log(f.descripcion);
-        console.log('================================'.green);
-    }
     break;
 
     default:

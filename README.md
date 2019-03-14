@@ -32,9 +32,11 @@ para usar ejecutar los siguientes
     ```
     node app listar
     ```
-- filtrar tareas 
+
+    tambien se puede obtener un listado por filtro, es decir, si la tarea esta completada o no
+
     ```
-    node app filtrar -c true/false o
-    node app filtrar --completado true/false
+    node app listar -c true/false
+    node app listar --completado true/false
     ```
-    si no se especifica el -c  se tomará por defecto como false
+    Si se agrega solo el -c por defecto filtrará las tareas realizadas.
