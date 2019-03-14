@@ -2,7 +2,7 @@
 
 ## Aplicación de comando de tareas por hacer
 
-Esta es una aplicacion de comando, donde se pueden crear tareas, actualizarlas, eliminarlas, y obtener un listado de todas las tareas.
+Esta es una aplicacion de comando, donde se pueden crear tareas, actualizarlas, eliminarlas, obtener un listado de todas las tareas y tareas por filtro.
 
     
 Antes de usar la aplicación, ejecutar
@@ -21,7 +21,7 @@ para usar ejecutar los siguientes
     node app actualizar -d "descripcion de la tarea" -c true/false o
     node app actualizar --descripcion "descripcion de la tarea" --completado true/false
     ```
-    si no se especifica el -c o --completado se tomará por defecto como true
+    si no se especifica el -c  se tomará por defecto como true
 
 - borrar tarea 
     ```
@@ -32,3 +32,9 @@ para usar ejecutar los siguientes
     ```
     node app listar
     ```
+- filtrar tareas 
+    ```
+    node app filtrar -c true/false o
+    node app filtrar --completado true/false
+    ```
+    si no se especifica el -c  se tomará por defecto como false
