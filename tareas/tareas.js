@@ -87,9 +87,20 @@ const eliminar = (descripcion) => {
     } */
 }
 
+const filtrar = (completado) => {
+    cargar();
+
+    let filtro = listado.filter( tarea => {
+        return tarea.completado == completado;
+    })
+
+    return filtro;
+}
+
 module.exports = {
     crear,
     getListado,
     actualizar,
-    eliminar
+    eliminar,
+    filtrar
 }

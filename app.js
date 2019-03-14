@@ -34,6 +34,21 @@ switch( comando ) {
         console.log(borrado);
     break;
 
+    case 'filtrar':
+    let filtro = tarea.filtrar( argv.completado );
+    for(let f of filtro){
+        if(argv.completado){
+            console.log('======= Tareas realizadas ======='.green);
+        }
+        else{
+            console.log('======= Tareas por hacer ======='.green);
+        }
+        
+        console.log(f.descripcion);
+        console.log('================================'.green);
+    }
+    break;
+
     default:
         console.log("Comando no reconocido");
 }
