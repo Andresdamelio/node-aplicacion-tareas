@@ -5,7 +5,7 @@
 Esta es una aplicacion de comando, donde se pueden crear tareas, actualizarlas, eliminarlas, y obtener un listado de todas las tareas.
 
     
-Antes de ejecutar la aplicación, ejecutar
+Antes de usar la aplicación, ejecutar
 ```
 npm install
 ```
