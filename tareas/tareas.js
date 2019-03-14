@@ -22,11 +22,11 @@ const cargar = () => {
 
 const validacion = (descripcion) => {
     let index = listado.findIndex(tarea => {
-        return tarea.descripcion === descripcion;
+        return tarea.descripcion.ignoreCase === descripcion.ignoreCase;
     })
 
     if(index != -1){
-        console.log("La tarea ya existe");
+        console.log("Ya existe una tarea con esa descripción.");
         return true;
     }else{
         return false;
