@@ -20,8 +20,25 @@ const cargar = () => {
     }
 }
 
+const validacion = (descripcion) => {
+    let index = listado.findIndex(tarea => {
+        return tarea.descripcion === descripcion;
+    })
+
+    if(index != -1){
+        console.log("La tarea ya existe");
+        return true;
+    }else{
+        return false;
+    }
+}
+
 const crear = (descripcion) =>{
     cargar();
+    let estado = validacion(descripcion);
+    if(estado){
+        return false;
+    }
     let porHacer = {
         descripcion,
         completado:false

@@ -9,8 +9,9 @@ switch( comando ) {
 
     case 'crear': 
        let porHacer = tarea.crear(argv.descripcion);
-       console.log("Tarea creada con éxito", porHacer);
-       
+       if(porHacer){
+        console.log("Tarea creada con éxito", porHacer);
+       }
     break;
 
     case 'listar':
